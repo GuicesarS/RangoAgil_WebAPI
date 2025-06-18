@@ -8,6 +8,8 @@ public class RangoAgilProfile : Profile
     public RangoAgilProfile()
     {
         CreateMap<Rango, RangoDTO>().ReverseMap();
+        CreateMap<Rango, RangoCriaDTO>().ReverseMap();
+        CreateMap<Rango, RangoAtualizaDTO>().ReverseMap();
         CreateMap<Ingrediente, IngredienteDTO>()
             .ForMember(
                 d => d.RangoId,

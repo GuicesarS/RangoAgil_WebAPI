@@ -10,14 +10,14 @@ using RangoAgil.API.DbContexts;
 namespace RangoAgil.API.Migrations
 {
     [DbContext(typeof(RangoDbContext))]
-    [Migration("20240116024109_Initial")]
+    [Migration("20250617160221_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.1");
+            modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
             modelBuilder.Entity("IngredienteRango", b =>
                 {
