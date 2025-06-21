@@ -1,4 +1,5 @@
-﻿using RangoAgil.API.EndpointHandlers;
+﻿using RangoAgil.API.EndpointFilters;
+using RangoAgil.API.EndpointHandlers;
 
 namespace RangoAgil.API.Extensions;
 public static class EndpointRouteBuilderExtensions
@@ -8,12 +9,22 @@ public static class EndpointRouteBuilderExtensions
         var rangosEndpoints = endpointRouteBuilder.MapGroup("/rangos");
         var rangosEndpointsId = rangosEndpoints.MapGroup("/{rangoId:int}");
 
-        rangosEndpoints.MapGet("", RangosHandlers.GetRangosAsync);
-        rangosEndpointsId.MapGet("", RangosHandlers.GetRangoById).WithName("GetRangos");
-        rangosEndpoints.MapPost("", RangosHandlers.CreateRangoAsync);
-        rangosEndpointsId.MapPut("", RangosHandlers.UpdateRangoAsync);
-        rangosEndpointsId.MapDelete("", RangosHandlers.DeleteRangoAsync);
+        var rangoscomIdAndLockFilterEndpoints = endpointRouteBuilder.MapGroup("/rangos/{rangoId:int}")
+            .AddEndpointFilter(new RangoIsLockedFilter(6))
+            .AddEndpointFilter(new RangoIsLockedFilter(4));
 
+        rangosEndpoints.MapGet("", RangosHandlers.GetRangosAsync);
+
+        rangosEndpointsId.MapGet("", RangosHandlers.GetRangoById).WithName("GetRangos");
+
+        rangosEndpoints.MapPost("", RangosHandlers.CreateRangoAsync)
+            .AddEndpointFilter<ValidadeAnnotationFilter>();
+
+        rangoscomIdAndLockFilterEndpoints.MapPut("", RangosHandlers.UpdateRangoAsync);
+
+        rangoscomIdAndLockFilterEndpoints.MapDelete("", RangosHandlers.DeleteRangoAsync)
+            .AddEndpointFilter<LogNotFoundResponseFilter>();
+        
     }
 
     public static void RegisterIngredientesEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
