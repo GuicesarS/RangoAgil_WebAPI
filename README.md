@@ -1,46 +1,49 @@
 # 🍽️ RangoÁgil API
 
-API RESTful desenvolvida com **.NET 8**, utilizando o conceito de **Minimal APIs**, voltada para a gestão de pratos e ingredientes, com autenticação e autorização completas via JWT e Identity.
+RESTful API developed with **.NET 8**, using the **Minimal API** approach, focused on managing dishes and ingredients, with full authentication and authorization via **JWT** and **ASP.NET Identity**.
 
-Este é um projeto pessoal criado com o objetivo de consolidar conhecimentos em desenvolvimento back-end utilizando uma **arquitetura enxuta**, seguindo boas práticas de organização, segurança e escalabilidade.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- .NET 8
-- ASP.NET Core Minimal API
-- Entity Framework Core
-- AutoMapper
-- ASP.NET Identity + JWT
-- Swagger / Swashbuckle
-- Endpoint Filters
-- DTOs
-- Git e GitHub
+This is a personal project created to consolidate knowledge in back-end development using a **lightweight architecture**, following best practices in organization, security, and scalability.
 
 ---
 
-## 📌 Sobre a Arquitetura
+## 🛠️ Technologies Used
 
-A aplicação foi construída com **Minimal API**, uma abordagem mais direta e leve do ASP.NET Core, ideal para microserviços ou aplicações pequenas e específicas. 
-
-Este projeto segue o princípio de separação de responsabilidades, organização modular dos handlers e aplicação de boas práticas RESTful, mesmo utilizando uma abordagem minimalista. A autenticação é baseada em JWT integrada ao ASP.NET Identity, garantindo segurança robusta para os endpoints protegidos.
-
----
-
-## 🔒 Funcionalidades
-
-- Cadastro e autenticação de usuários
-- Login e geração de tokens JWT
-- Confirmação de e-mail e recuperação de senha
-- Gerenciamento de pratos (“rangos”)
-- Adição e listagem de ingredientes por prato
-- Documentação interativa com Swagger
+- .NET 8  
+- ASP.NET Core Minimal API  
+- Entity Framework Core  
+- AutoMapper  
+- ASP.NET Identity + JWT  
+- Swagger / Swashbuckle  
+- Endpoint Filters  
+- DTOs  
+- Git and GitHub  
 
 ---
 
-## 📁 Observações
+## 📌 About the Architecture
 
-Este projeto representa um **serviço isolado**, com estrutura enxuta e escalável, podendo ser tratado como um **microserviço** em um sistema maior. Ideal para cenários de estudo, prova de conceito ou composição em arquitetura orientada a serviços.
+The application was built using **Minimal API**, a more streamlined and lightweight approach from ASP.NET Core, ideal for microservices or small, focused applications.
+
+This project follows the principle of separation of concerns, modular organization of handlers, and the application of RESTful best practices, even within a minimalist structure.  
+Authentication is based on JWT integrated with ASP.NET Identity, ensuring robust security for protected endpoints.
 
 ---
+
+## 🔒 Features
+
+- User registration and authentication  
+- Login and JWT token generation  
+- Email confirmation and password recovery  
+- Dish (“rango”) management  
+- Adding and listing ingredients per dish  
+- Interactive API documentation with Swagger
+
+---
+
+## 📁 Notes
+
+This project represents an **isolated service** with a lightweight and scalable structure, designed to function as a **microservice** within a larger system.  
+It is ideal for study scenarios, proof of concept, or composing a service-oriented architecture.
+
+---
+📄 Available in: [Portuguese](README.pt.md)
