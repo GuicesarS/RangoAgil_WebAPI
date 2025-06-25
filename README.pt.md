@@ -45,4 +45,4 @@ Este projeto representa um **serviço isolado**, com estrutura enxuta e escaláv
 
 ---
 
-📄 Available in: [English](README.md)
+📄 Disponível em: [Inglês](README.md)
